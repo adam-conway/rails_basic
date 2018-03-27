@@ -9,3 +9,9 @@
     <%= address.zip %>
   <% end %>
 </p>
+
+<p>
+  <% @student.courses.each do |course| %>
+    <%= course.name %>
+  <% end %>
+</p>

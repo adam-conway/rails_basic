@@ -30,6 +30,10 @@ describe 'User' do
     course2 = Course.create!(name: "Mod2")
     course3 = Course.create!(name: "Mod3")
     course4 = Course.create!(name: "Mod4")
+    student_course = StudentCourse.create!(student_id: student.id, course_id: course1.id)
+    student_course = StudentCourse.create!(student_id: student.id, course_id: course2.id)
+    student_course = StudentCourse.create!(student_id: student.id, course_id: course3.id)
+    student_course = StudentCourse.create!(student_id: student.id, course_id: course4.id)
 
     visit student_path(student)
 
