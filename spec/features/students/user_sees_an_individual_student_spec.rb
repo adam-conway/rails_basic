@@ -18,9 +18,24 @@ describe 'User' do
 
     visit student_path(student)
 
-    expect(page).to have_content("Great")
-    expect(page).to have_content("MLK")
-    expect(page).to have_content("NYC")
-    expect(page).to have_content("4564")
+    expect(page).to have_content(address1.description)
+    expect(page).to have_content(address2.street)
+    expect(page).to have_content(address3.city)
+    expect(page).to have_content(address4.state)
+  end
+
+  scenario 'User visits /students/:id and sees many courses' do
+    student = Student.create!(name: "Adam")
+    course1 = Course.create!(name: "Mod1")
+    course2 = Course.create!(name: "Mod2")
+    course3 = Course.create!(name: "Mod3")
+    course4 = Course.create!(name: "Mod4")
+
+    visit student_path(student)
+
+    expect(page).to have_content(course1.name)
+    expect(page).to have_content(course2.name)
+    expect(page).to have_content(course3.name)
+    expect(page).to have_content(course4.name)
   end
 end
