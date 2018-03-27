@@ -1,3 +1,6 @@
 <% @students.each do |student| %>
-  <%= student.name %>
+  <p class='student_<%= student.id %>'>
+    <%= student.name %>
+    <%= link_to "Delete", student_path(student), method: 'delete' %>
+  </p>
 <% end %>
