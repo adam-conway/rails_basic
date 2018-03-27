@@ -10,7 +10,8 @@ describe 'User' do
     fill_in "address[city]", with: "Denver"
     fill_in "address[state]", with: "CO"
     fill_in "address[zip]", with: "80220"
-    click_on "Submit"
+
+    click_on "Create Address"
 
     expect(current_path).to eq(student_path(student))
     expect(page).to have_content(Address.last.description)
