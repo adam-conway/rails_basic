@@ -9,6 +9,10 @@
   </head>
 
   <body>
+    <nav class="nav-bar">
+      <%= link_to "Students", students_path%>
+      <%= link_to "Create A Student", new_student_path%>
+    </nav>
     <%= yield %>
   </body>
 </html>
